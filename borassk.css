@@ -95,7 +95,7 @@ footer {
     text-align: center;
 }
 
-.startlista {
+.tavlingarnav {
     float: left;
     height: 3vh;
     display: flex;
@@ -117,4 +117,24 @@ footer {
 
 label {
     margin: 0 0 0 1em;
+}
+
+.startlista {
+    width: 100%;
+}
+
+th {
+    background-color: rgb(183,17,19);
+}
+
+td {
+    width: 25%;
+}
+
+tr {
+    width: 100%;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
