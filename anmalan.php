@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    include("db-connect.php");
+    //session_start();
+    //include("db_connect.php");
 ?>
 
 <!DOCTYPE html>
@@ -46,6 +46,7 @@
                 <option value="åldersbaserad">Åldersbaserad</option>
                 <option value="öppen">Öppen</option>
             </select><br>
+            <input type="submit" value="Skicka in anmälan">
         </form>
 
         <footer class="footer">
