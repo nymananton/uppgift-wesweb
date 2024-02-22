@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("db-connect.php");
+    include("db_connect.php");
 ?>
 
 <!DOCTYPE html>
@@ -20,10 +20,36 @@
             </ul>
         </nav>
 
-        <ul class="startlista">
+        <ul class="tavlingarnav">
             <li class="tävlingli"><h3>XCgames</h3></li>
             <li class="tävlingli" id="anmälan"><a href="anmalan.php">Anmälan</a></li>
         </ul> 
+
+        <?php
+        //$sql = "INSERT INTO startlista (förnamn, efternamn, kön, födelseår, klass) VALUES (\"Gustav\", \"Vasa\", \"kille\", \"1496\", \"öppen\");";
+        //$sql = "INSERT INTO startlista (förnamn, efternamn, kön, födelseår, klass) VALUES (\"Aina\", \"Nordén\", \"tjej\", \"1922\", \"öppen\");";
+        //$sql = "INSERT INTO startlista (förnamn, efternamn, kön, födelseår, klass) VALUES (\"Elias\", \"Lyckelid\", \"kille\", \"2005\", \"åldersbaserad\");";
+        $sql = "SELECT * FROM startlista;";
+        $result = mysqli_query($conn, $sql);
+        ?>
+
+        <table class="startlista">
+            <tr>
+                <th>Startnummer</th>
+                <th>Förnamn</th>
+                <th>Efternamn</th>
+                <th>Födelseår</th>
+            </tr>
+            <?php
+            while($row = mysqli_fetch_array($result)) : ?>
+            <tr>
+                <td><?=$row['startnummer']?></td> 
+                <td><?=$row['fornamn']?></td> 
+                <td><?=$row['efternamn']?></td> 
+                <td><?=$row['fodelsear']?></td> 
+            </tr>
+            <?php endwhile; ?>
+        </table>
 
         <footer class="footer">
             <p>Ansvarig: Anton Nyman | <strong>BORÅS SK - SKIDOR</strong> | E-post: borasskidloparklubb@gmail.com</p>
