@@ -1,9 +1,11 @@
 <?php
-    $username = "username";
-    $password = "password";
+    $dbhost = "localhost";
+    $username = "root";
+    $password = "";
     $dbname = "startlista";
 
-    $conn = new mysqli("localhost", $username, $password, $dbname) or die("Anslutningen misslyckades");
-
-    echo "Connected successfully";
+    $conn = mysqli_connect($dbhost, $username, $password, $dbname);
+    if (mysqli_connect_errno()) {
+        exit("Anlutningen misslyckades". mysqli_connect_error());
+    }
 ?>
