@@ -36,7 +36,7 @@
             <label for="födelseår">Födelseår</label><br>
             <select name="födelseår">
                 <option>Välj år</option>
-                <?php $years = range(2024, 1900);?>
+                <?php $years = range(date("Y"), 1900);?>
                 <?php foreach ($years as $year) : ?>
                 <option value="<?=$year;?>"><?=$year; ?></option>
                 <?php endforeach; ?>
